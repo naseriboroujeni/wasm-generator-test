@@ -1,0 +1,18 @@
+spin_manifest_version = 2
+
+[application]
+authors = ["naseriboroujeni <naseriboroujeni@gmail.com>"]
+description = ""
+name = "test"
+version = "0.1.0"
+
+[[trigger.http]]
+route = "/..."
+component = "test"
+
+[component.test]
+source = "target/test.wasm"
+exclude_files = ["**/node_modules"]
+[component.test.build]
+command = "npm run build"
+watch = ["src/**/*.ts", "package.json"]
